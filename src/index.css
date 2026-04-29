@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Safe area for iPhones with Dynamic Island / notch */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 @theme {
   --color-olive-50: #f4f7ec;
   --color-olive-100: #e5ecd4;

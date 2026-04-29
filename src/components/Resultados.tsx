@@ -1,8 +1,9 @@
+const b = import.meta.env.BASE_URL;
 const gallery = [
-  { src: "/imgrealALORE1.jpg", label: "Harmonização", offset: false },
-  { src: "/imgrealALORE2.jpg", label: "Botox", offset: true },
-  { src: "/imgrealALORE3.jpg", label: "Preenchimento", offset: false },
-  { src: "/imgrealALORE4.jpg", label: "Corporal", offset: true },
+  { src: `${b}imgrealALORE1.jpg`, label: "Harmonização", offset: false },
+  { src: `${b}imgrealALORE2.jpg`, label: "Botox", offset: true },
+  { src: `${b}imgrealALORE3.jpg`, label: "Preenchimento", offset: false },
+  { src: `${b}imgrealALORE4.jpg`, label: "Corporal", offset: true },
 ];
 
 export default function Resultados() {

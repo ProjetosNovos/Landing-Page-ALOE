@@ -12,7 +12,7 @@ export default function Sobre() {
             </div>
             <div className="organic-mask-1 overflow-hidden aspect-[4/5] bg-sand-200">
               <img
-                src="/espacoALOE.jpg"
+                src={`${import.meta.env.BASE_URL}espacoALOE.jpg`}
                 alt="Espaço da clínica ALOE"
                 className="w-full h-full object-cover"
               />

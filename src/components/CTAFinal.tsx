@@ -14,7 +14,7 @@ export default function CTAFinal() {
     <section className="py-28 md:py-40 relative overflow-hidden" id="agendar">
       {/* Background image with overlay */}
       <img
-        src="/imgVagasALOE.jpg"
+        src={`${import.meta.env.BASE_URL}imgVagasALOE.jpg`}
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-[51%_35%]"
       />

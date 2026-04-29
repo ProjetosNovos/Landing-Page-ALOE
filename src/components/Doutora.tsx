@@ -16,7 +16,7 @@ export default function Doutora() {
             </div>
             <div className="organic-mask-2 overflow-hidden aspect-[3/4] bg-sand-200">
               <img
-                src="/fotodraALOE.jpg"
+                src={`${import.meta.env.BASE_URL}fotodraALOE.jpg`}
                 alt="Dra. Karoline Araújo"
                 className="w-full h-full object-cover object-top"
               />

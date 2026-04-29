@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export default function Navbar({ scrolled, isMenuOpen, setIsMenuOpen }: NavbarProps) {
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-surface backdrop-blur-[16px] border-b border-sand-400/50' : 'bg-transparent border-b border-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#fcf9f4] border-b border-sand-400/50' : 'bg-transparent border-b border-transparent'}`}>
       <div className="max-w-[1280px] mx-auto px-5 md:px-16 py-4 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
           <span className="font-serif text-[28px] font-light tracking-[0.15em] text-[#3B5E3B]">ALOE</span>

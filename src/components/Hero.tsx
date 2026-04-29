@@ -17,7 +17,7 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/30 to-transparent" />
 
-        <div className="absolute inset-x-0 bottom-0 pb-14 px-6 flex flex-col items-center text-center z-10">
+        <div className="absolute inset-x-0 bottom-0 pb-24 px-6 flex flex-col items-center text-center z-10">
           <p className="text-[11px] tracking-[0.4em] uppercase text-[#D4B896] mb-5 anim-fade-up">
             Medicina & Estética
           </p>

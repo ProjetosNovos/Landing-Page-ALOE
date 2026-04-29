@@ -1,14 +1,34 @@
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import { useWhatsApp } from '../WhatsAppContext';
 
 export default function Hero() {
   const { openWhatsApp } = useWhatsApp();
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const playVideos = () => {
+      mobileVideoRef.current?.play().catch(() => {});
+      desktopVideoRef.current?.play().catch(() => {});
+      document.removeEventListener('touchstart', playVideos);
+      document.removeEventListener('click', playVideos);
+    };
+    document.addEventListener('touchstart', playVideos, { once: true });
+    document.addEventListener('click', playVideos, { once: true });
+    return () => {
+      document.removeEventListener('touchstart', playVideos);
+      document.removeEventListener('click', playVideos);
+    };
+  }, []);
   return (
     <>
       {/* ── Mobile Hero ── */}
       <section className="relative h-[100svh] w-full overflow-hidden lg:hidden">
         <video
+          ref={mobileVideoRef}
           src={`${import.meta.env.BASE_URL}VideoNovoALOE.mp4`}
+          poster={`${import.meta.env.BASE_URL}imgPage1.jpeg`}
           autoPlay
           loop
           muted
@@ -55,7 +75,9 @@ export default function Hero() {
       <section className="relative hidden lg:block h-screen overflow-hidden">
         {/* Background image – fullscreen */}
         <video
+          ref={desktopVideoRef}
           src={`${import.meta.env.BASE_URL}VideoNovoALOE.mp4`}
+          poster={`${import.meta.env.BASE_URL}imgPage1.jpeg`}
           autoPlay
           loop
           muted

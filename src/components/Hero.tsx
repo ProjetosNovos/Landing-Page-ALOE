@@ -8,7 +8,7 @@ export default function Hero() {
       {/* ── Mobile Hero ── */}
       <section className="relative h-[100svh] w-full overflow-hidden lg:hidden">
         <video
-          src="/VideoNovoALOE.mp4"
+          src={`${import.meta.env.BASE_URL}VideoNovoALOE.mp4`}
           autoPlay
           loop
           muted
@@ -55,7 +55,7 @@ export default function Hero() {
       <section className="relative hidden lg:block h-screen overflow-hidden">
         {/* Background image – fullscreen */}
         <video
-          src="/VideoNovoALOE.mp4"
+          src={`${import.meta.env.BASE_URL}VideoNovoALOE.mp4`}
           autoPlay
           loop
           muted

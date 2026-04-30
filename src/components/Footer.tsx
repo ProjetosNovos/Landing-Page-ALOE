@@ -54,6 +54,11 @@ export default function Footer() {
             <a href="#" className="font-sans text-[12px] text-sand-600 hover:text-sand-300 transition-colors duration-300">Termos de Uso</a>
           </div>
         </div>
+        <div className="mt-4 text-center">
+          <p className="font-sans text-[11px] text-sand-700">
+            Desenvolvido por: traffixpro
+          </p>
+        </div>
       </div>
     </footer>
   );

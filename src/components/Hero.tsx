@@ -94,7 +94,7 @@ export default function Hero() {
             <div className="flex items-center gap-4 mb-10 anim-fade-up">
               <div className="h-px w-16 bg-[#B8956A] anim-draw-line" />
               <span className="text-[11px] tracking-[0.4em] uppercase text-[#D4B896] font-medium">
-                A sua melhor versão
+                Vem pra ALOE, aqui é seu lugar
               </span>
             </div>
 

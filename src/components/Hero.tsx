@@ -39,7 +39,7 @@ export default function Hero() {
 
         <div className="absolute inset-x-0 bottom-0 pb-8 px-6 flex flex-col items-center text-center z-10">
           <p className="text-[11px] tracking-[0.4em] uppercase text-[#D4B896] mb-3 anim-fade-up">
-            Medicina & Estética
+            Vem pra ALOE, aqui é seu lugar
           </p>
           <h1 className="font-serif text-[2.2rem] leading-[1.1] text-white mb-3 anim-fade-up delay-1 font-light">
             Arte, Ciência<br />

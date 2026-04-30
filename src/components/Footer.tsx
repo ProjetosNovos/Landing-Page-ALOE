@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
         <div className="mt-4 text-center">
           <p className="font-sans text-[11px] text-sand-700">
-            Desenvolvido por: traffixpro
+            Desenvolvido por: <a href="https://trafixpro.com.br/" target="_blank" rel="noreferrer" className="hover:text-sand-400 transition-colors duration-300">traffixpro</a>
           </p>
         </div>
       </div>

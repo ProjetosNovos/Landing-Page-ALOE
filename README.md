@@ -50,6 +50,7 @@ public/
 ├── imgPage1.jpeg            # Imagem para Open Graph/SEO
 ├── imgVagasALOE.jpg         # Imagem do CTA final
 ├── imgrealALORE1-4.jpg      # Fotos da galeria de resultados
+├── preenchimento-labial.jpg # Foto do tratamento de preenchimento labial
 └── favicon.png              # Favicon
 ```
 
@@ -82,6 +83,7 @@ https://projetosnovos.github.io/Landing-Page-ALOE/
 - Suporte a **Dynamic Island** do iPhone (safe area insets)
 - Zoom desabilitado no mobile para experiencia nativa
 - Video de fundo com autoplay silencioso
+- Animacao letra por letra na tagline do Hero, sincronizada com o video e repetida a cada loop
 
 ## Contato
 

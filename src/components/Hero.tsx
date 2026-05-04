@@ -1,6 +1,35 @@
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useWhatsApp } from '../WhatsAppContext';
+
+function RevealText({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <span className={className} aria-label={text}>
+      {text.split('').map((char, i) => (
+        <span
+          key={i}
+          className="inline-block transition-all duration-500"
+          style={{
+            color: visible ? 'inherit' : 'transparent',
+            textShadow: visible ? 'none' : 'none',
+            transitionDelay: visible ? `${i * 45}ms` : '0ms',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(6px)',
+          }}
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export default function Hero() {
   const { openWhatsApp } = useWhatsApp();
@@ -39,7 +68,7 @@ export default function Hero() {
 
         <div className="absolute inset-x-0 bottom-0 pb-8 px-6 flex flex-col items-center text-center z-10">
           <p className="text-[11px] tracking-[0.4em] uppercase text-[#D4B896] mb-3 anim-fade-up">
-            Vem pra ALOE, aqui é seu lugar
+            <RevealText text="Vem pra ALOE, aqui é seu lugar" delay={600} />
           </p>
           <h1 className="font-serif text-[2.2rem] leading-[1.1] text-white mb-3 anim-fade-up delay-1 font-light">
             Arte, Ciência<br />
@@ -94,7 +123,7 @@ export default function Hero() {
             <div className="flex items-center gap-4 mb-10 anim-fade-up">
               <div className="h-px w-16 bg-[#B8956A] anim-draw-line" />
               <span className="text-[11px] tracking-[0.4em] uppercase text-[#D4B896] font-medium">
-                Vem pra ALOE, aqui é seu lugar
+                <RevealText text="Vem pra ALOE, aqui é seu lugar" delay={800} />
               </span>
             </div>
 

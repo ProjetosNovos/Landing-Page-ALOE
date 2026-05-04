@@ -4,24 +4,40 @@ import { useWhatsApp } from '../WhatsAppContext';
 
 function RevealText({ text, className, videoRef }: { text: string; className?: string; videoRef: React.RefObject<HTMLVideoElement | null> }) {
   const [visible, setVisible] = useState(false);
+  const [key, setKey] = useState(0);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const onPlay = () => setVisible(true);
+    const onPlaying = () => {
+      setVisible(false);
+      setKey(k => k + 1);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setVisible(true));
+      });
+    };
+
+    const onSeeked = () => {
+      if (video.currentTime < 0.5) {
+        onPlaying();
+      }
+    };
 
     if (!video.paused) {
       setVisible(true);
-      return;
     }
 
-    video.addEventListener('playing', onPlay, { once: true });
-    return () => video.removeEventListener('playing', onPlay);
+    video.addEventListener('playing', onPlaying);
+    video.addEventListener('seeked', onSeeked);
+    return () => {
+      video.removeEventListener('playing', onPlaying);
+      video.removeEventListener('seeked', onSeeked);
+    };
   }, [videoRef]);
 
   return (
-    <span className={className} aria-label={text}>
+    <span className={className} aria-label={text} key={key}>
       {text.split('').map((char, i) => (
         <span
           key={i}

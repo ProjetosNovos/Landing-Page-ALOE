@@ -19,7 +19,7 @@ const treatments = [
     title: "Preenchimento Labial",
     tag: "Destaque",
     description: "Volume e definição labial com ácido hialurônico de alta qualidade. Lábios mais bonitos, hidratados e com contorno suave e elegante.",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=700&q=80&auto=format",
+    image: "/preenchimento-labial.jpg",
     context: "preenchimento",
   },
   {
